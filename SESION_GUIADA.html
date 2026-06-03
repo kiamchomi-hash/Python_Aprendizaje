@@ -417,11 +417,19 @@ code --list-extensions</code></pre>
       </ol>
 
       <h3>Comandos locales manuales</h3>
-      <pre><code>git remote add origin https://github.com/kiamchomi-hash/Python_Aprendizaje.git
-git push -u origin master</code></pre>
+      <pre><code>git branch -M main
+git remote add origin https://github.com/kiamchomi-hash/Python_Aprendizaje.git
+git push -u origin main</code></pre>
 
       <h3>Comando usado con GitHub CLI</h3>
       <pre><code>gh repo create Python_Aprendizaje --public --source . --remote origin --push</code></pre>
+
+      <h3>Normalizar rama principal</h3>
+      <p>En repositorios nuevos es habitual usar <code>main</code> como rama principal.</p>
+      <pre><code>git branch -M main
+git push -u origin main
+gh repo edit kiamchomi-hash/Python_Aprendizaje --default-branch main
+git push origin --delete master</code></pre>
 
       <h3>Verificacion</h3>
       <p>Despues del push, abrir:</p>
