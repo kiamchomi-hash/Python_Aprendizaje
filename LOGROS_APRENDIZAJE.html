@@ -184,14 +184,29 @@ branch 'main' set up to track 'origin/main'</code></pre>
       </div>
 
       <div class="achievement">
-        <h3>Entender el flujo PC, GitHub y otra PC</h3>
+        <h3>Entender el flujo completo entre PC, Git y GitHub</h3>
         <p><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Repositorios</span></p>
-        <p>Ya se entendio que GitHub funciona como copia online del proyecto y que permite mover cambios entre computadoras.</p>
-        <pre><code>Tu PC  &lt;----&gt;  GitHub  &lt;----&gt;  Otra PC</code></pre>
-        <p>Comandos clave:</p>
-        <pre><code>git push  = subir cambios de tu PC a GitHub
-git clone = bajar el proyecto por primera vez desde GitHub a otra PC
-git pull  = traer cambios nuevos desde GitHub a una PC que ya tenia el proyecto</code></pre>
+        <p>Ya se entendio que GitHub funciona como copia online del proyecto y que Git maneja el historial local antes de subirlo.</p>
+
+        <p>Mapa mental:</p>
+        <pre><code>VS Code  ->  Git local  ->  GitHub  ->  Otra PC</code></pre>
+
+        <p>Comandos principales del trabajo diario:</p>
+        <pre><code>git status = ver que archivos cambiaron
+git add archivo.py = preparar un archivo para guardarlo
+git commit -m "mensaje" = guardar una version en tu PC
+git push = subir esa version a GitHub</code></pre>
+
+        <p>Comandos para usar el proyecto en otra computadora:</p>
+        <pre><code>git clone URL = bajar el proyecto por primera vez desde GitHub
+git pull = traer cambios nuevos desde GitHub a una PC que ya tenia el proyecto</code></pre>
+
+        <p>Flujo completo en tu PC:</p>
+        <pre><code>python holamundo.py
+git status
+git add holamundo.py
+git commit -m "Practicar print"
+git push</code></pre>
       </div>
     </section>
 
