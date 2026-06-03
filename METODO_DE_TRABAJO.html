@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metodo de Trabajo</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #d9dee7;
+      --accent: #2563eb;
+      --code-bg: #111827;
+      --code-text: #f9fafb;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f141b;
+        --panel: #171d26;
+        --text: #e5e7eb;
+        --muted: #a7b0bf;
+        --border: #2c3645;
+        --accent: #70a7ff;
+        --code-bg: #05070a;
+        --code-text: #f3f4f6;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(900px, calc(100% - 32px));
+      margin: 32px auto 48px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    ol,
+    ul {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    code {
+      font-family: Consolas, "Cascadia Code", monospace;
+      background: color-mix(in srgb, var(--panel), var(--bg) 40%);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 1px 5px;
+    }
+
+    pre {
+      margin: 10px 0 0;
+      padding: 14px;
+      overflow-x: auto;
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    pre code {
+      background: transparent;
+      border: 0;
+      padding: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Metodo de Trabajo</h1>
+      <p class="muted">Regla operativa para documentar herramientas nuevas como una guia manual autosuficiente.</p>
+    </header>
+
+    <section>
+      <h2>Regla Principal</h2>
+      <p>Cuando haya que instalar una herramienta, la guia debe estar escrita como si se hiciera manualmente, sin depender de ningun asistente.</p>
+      <ol>
+        <li>Primero se explica que es la herramienta y para que sirve.</li>
+        <li>Despues se explica por que se necesita dentro de la hoja de ruta.</li>
+        <li>Luego se dan los pasos manuales exactos para instalarla.</li>
+        <li>Se incluye el comando concreto, si existe una instalacion por terminal.</li>
+        <li>Se explica como verificar que quedo bien instalada.</li>
+        <li>Se agrega que hacer si aparece un error comun.</li>
+        <li>Al final se deja un checklist de confirmacion.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Formato De Cada Instalacion</h2>
+      <p>Cada instalacion se documentara con esta estructura:</p>
+      <ol>
+        <li><strong>Que es:</strong> descripcion corta.</li>
+        <li><strong>Por que lo usamos:</strong> relacion con la hoja de ruta.</li>
+        <li><strong>Instalacion manual:</strong> pasos exactos para hacerlo a mano.</li>
+        <li><strong>Comando recomendado:</strong> comando visible, si corresponde.</li>
+        <li><strong>Verificacion:</strong> comando para confirmar que quedo bien.</li>
+        <li><strong>Errores comunes:</strong> problema probable y solucion.</li>
+        <li><strong>Checklist:</strong> puntos que confirman que se puede avanzar.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Ejemplo</h2>
+      <p>Ejemplo de guia manual para instalar Python en Windows con winget:</p>
+      <ol>
+        <li>Abrir PowerShell.</li>
+        <li>Comprobar si winget esta disponible con <code>winget --version</code>.</li>
+        <li>Ejecutar el comando de instalacion.</li>
+        <li>Cerrar la terminal y abrir una nueva.</li>
+        <li>Verificar Python y pip.</li>
+      </ol>
+      <pre><code>winget install -e --id Python.Python.3.12 --accept-package-agreements --accept-source-agreements</code></pre>
+      <p>Para verificar:</p>
+      <pre><code>python --version
+pip --version</code></pre>
+    </section>
+
+    <section>
+      <h2>Archivos De Apoyo</h2>
+      <ul>
+        <li><code>SESION_GUIADA.html</code>: panel vivo de pasos actuales.</li>
+        <li><code>ROADMAP_EXPERTO_PYTHON_DATOS_IA.md</code>: hoja de ruta completa.</li>
+        <li><code>METODO_DE_TRABAJO.html</code>: este documento con la regla de escritura manual.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

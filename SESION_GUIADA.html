@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sesion Guiada</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #d9dee7;
+      --accent: #2563eb;
+      --code-bg: #111827;
+      --code-text: #f9fafb;
+      --ok: #147a42;
+      --warn: #a15c07;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f141b;
+        --panel: #171d26;
+        --text: #e5e7eb;
+        --muted: #a7b0bf;
+        --border: #2c3645;
+        --accent: #70a7ff;
+        --code-bg: #05070a;
+        --code-text: #f3f4f6;
+        --ok: #75d39a;
+        --warn: #f1b35d;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1040px, calc(100% - 32px));
+      margin: 28px auto 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 32px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 21px;
+    }
+
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    code {
+      font-family: Consolas, "Cascadia Code", monospace;
+    }
+
+    pre {
+      margin: 10px 0 0;
+      padding: 14px;
+      overflow-x: auto;
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .status {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .status-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      background: color-mix(in srgb, var(--panel), var(--bg) 35%);
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .value {
+      display: block;
+      margin-top: 3px;
+      font-weight: 650;
+    }
+
+    .ok {
+      color: var(--ok);
+    }
+
+    .warn {
+      color: var(--warn);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Sesion Guiada</h1>
+        <p class="meta">Panel de trabajo para la Fase 1. Guia manual autosuficiente, escrita para poder seguirla sin ayuda externa.</p>
+      </div>
+      <div class="badge" id="live-status">Modo archivo estatico</div>
+    </header>
+
+    <section>
+      <h2>Estado Actual</h2>
+      <div class="status">
+        <div class="status-item">
+          <span class="label">Python</span>
+          <span class="value ok">Instalado: Python 3.12.10</span>
+        </div>
+        <div class="status-item">
+          <span class="label">pip</span>
+          <span class="value ok">Instalado: pip 25.0.1</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Git</span>
+          <span class="value ok">Instalado</span>
+        </div>
+        <div class="status-item">
+          <span class="label">VS Code</span>
+          <span class="value ok">Instalado</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Identidad Git</span>
+          <span class="value ok">Configurada: kiamchomi-hash / kiamchomi@gmail.com</span>
+        </div>
+        <div class="status-item">
+          <span class="label">Extension Python VS Code</span>
+          <span class="value ok">Instalada: ms-python.python</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Metodo De Trabajo</h2>
+      <ol>
+        <li>La guia se escribe como si la instalacion se hiciera completamente a mano.</li>
+        <li>Cada herramienta incluye que es, para que sirve, como instalarla y como verificarla.</li>
+        <li>Los comandos aparecen completos y en orden.</li>
+        <li>Los pasos no dependen de copiar resultados al chat.</li>
+        <li>Al final de cada bloque hay un checklist para saber si se puede avanzar.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Fase 1 - Paso 1: Verificar Entorno Base</h2>
+
+      <h3>Objetivo</h3>
+      <p>Confirmar que las herramientas minimas para empezar la ruta estan disponibles: Python, pip, Git y VS Code.</p>
+
+      <h3>1. Abrir una terminal nueva</h3>
+      <p>Cerrar cualquier PowerShell abierta y abrir una nueva. Esto permite que Windows recargue las variables de entorno, especialmente despues de instalar Python.</p>
+
+      <h3>2. Verificar Python</h3>
+      <p>Ejecutar:</p>
+      <pre><code>python --version</code></pre>
+      <p>Resultado esperado:</p>
+      <pre><code>Python 3.12.10</code></pre>
+
+      <h3>3. Verificar pip</h3>
+      <p>Ejecutar:</p>
+      <pre><code>pip --version</code></pre>
+      <p>Resultado esperado aproximado:</p>
+      <pre><code>pip 25.x from ... Python 3.12</code></pre>
+
+      <h3>4. Verificar Git</h3>
+      <p>Ejecutar:</p>
+      <pre><code>git --version</code></pre>
+      <p>Resultado esperado:</p>
+      <pre><code>git version 2.53.0.windows.1</code></pre>
+
+      <h3>5. Verificar VS Code</h3>
+      <p>Ejecutar:</p>
+      <pre><code>code --version</code></pre>
+      <p>Resultado esperado: varias lineas. La primera debe mostrar la version de VS Code.</p>
+    </section>
+
+    <section>
+      <h2>Comandos De Verificacion Juntos</h2>
+      <p>Si se quiere verificar todo de una vez, ejecutar:</p>
+      <pre><code>python --version
+pip --version
+git --version
+code --version</code></pre>
+    </section>
+
+    <section>
+      <h2>Configurar Identidad De Git</h2>
+      <p>Git necesita un nombre y un email para asociarlos a cada commit. Configurarlo una vez a nivel global:</p>
+      <pre><code>git config --global user.name "Tu Nombre"
+git config --global user.email "tu-email@example.com"</code></pre>
+      <p>Ejemplo:</p>
+      <pre><code>git config --global user.name "Matias Apellido"
+git config --global user.email "matias@email.com"</code></pre>
+      <p>Verificar la configuracion:</p>
+      <pre><code>git config --global user.name
+git config --global user.email</code></pre>
+
+      <h3>Configuracion elegida</h3>
+      <p>Para esta maquina se usara el usuario de GitHub como nombre visible y el email indicado:</p>
+      <pre><code>git config --global user.name "kiamchomi-hash"
+git config --global user.email "kiamchomi@gmail.com"</code></pre>
+    </section>
+
+    <section>
+      <h2>Errores Comunes</h2>
+      <ul>
+        <li>Si <code>python --version</code> abre Microsoft Store o dice que no se encontro Python, revisar los alias de ejecucion de aplicaciones de Windows o reinstalar Python con la opcion de agregar al PATH.</li>
+        <li>Si <code>pip --version</code> falla, probar <code>python -m pip --version</code>.</li>
+        <li>Si <code>code --version</code> falla, abrir VS Code y activar el comando de terminal desde la instalacion o reinstalar marcando la opcion de agregar al PATH.</li>
+        <li>Si Git no muestra nombre o email, ejecutar los comandos de configuracion global.</li>
+        <li>Si aparece <code>&gt;&gt;&gt;</code>, estas dentro del interprete interactivo de Python. Para volver a PowerShell, escribir <code>exit()</code> y presionar Enter.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Corregir Python En PATH</h2>
+      <h3>Que es PATH</h3>
+      <p><code>PATH</code> es la lista de carpetas donde Windows busca programas cuando se escribe un comando como <code>python</code> o <code>pip</code>.</p>
+
+      <h3>Problema detectado</h3>
+      <p>Python esta instalado, pero la terminal no lo encuentra por nombre. La ruta real es:</p>
+      <pre><code>C:\Users\matia\AppData\Local\Programs\Python\Python312\python.exe</code></pre>
+
+      <h3>Correccion manual</h3>
+      <ol>
+        <li>Abrir Configuracion de Windows.</li>
+        <li>Buscar <code>Variables de entorno</code>.</li>
+        <li>Entrar en <code>Variables de entorno</code>.</li>
+        <li>Editar la variable de usuario <code>Path</code>.</li>
+        <li>Agregar estas dos rutas:</li>
+      </ol>
+      <pre><code>C:\Users\matia\AppData\Local\Programs\Python\Python312\
+C:\Users\matia\AppData\Local\Programs\Python\Python312\Scripts\</code></pre>
+
+      <h3>Correccion por terminal</h3>
+      <pre><code>$pythonDir = "$env:LocalAppData\Programs\Python\Python312"
+$scriptsDir = "$pythonDir\Scripts"
+$currentPath = [Environment]::GetEnvironmentVariable("Path", "User")
+[Environment]::SetEnvironmentVariable("Path", "$pythonDir;$scriptsDir;$currentPath", "User")</code></pre>
+
+      <h3>Verificacion</h3>
+      <p>Cerrar PowerShell, abrir una nueva y ejecutar:</p>
+      <pre><code>python --version
+pip --version</code></pre>
+    </section>
+
+    <section>
+      <h2>Checklist Para Avanzar</h2>
+      <ul>
+        <li>Python instalado en <code>C:\Users\matia\AppData\Local\Programs\Python\Python312</code>.</li>
+        <li>pip responde correctamente usando Python 3.12.</li>
+        <li>Git instalado.</li>
+        <li>VS Code instalado.</li>
+        <li>Extension oficial de Python para VS Code instalada.</li>
+        <li>Git tiene configurados <code>user.name</code> y <code>user.email</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Siguiente Paso: Git Basico</h2>
+      <h3>Objetivo</h3>
+      <p>Guardar el avance con control de versiones para empezar a trabajar como en un proyecto real.</p>
+
+      <h3>Que es Git</h3>
+      <p>Git es un sistema de control de versiones. Sirve para guardar estados del proyecto, revisar cambios, volver a versiones anteriores y trabajar con repositorios remotos como GitHub.</p>
+
+      <h3>Conceptos minimos</h3>
+      <ul>
+        <li><code>git init</code>: convierte una carpeta en repositorio Git.</li>
+        <li><code>git status</code>: muestra que archivos cambiaron.</li>
+        <li><code>git add</code>: prepara archivos para guardarlos en un commit.</li>
+        <li><code>git commit</code>: guarda una version del proyecto con un mensaje.</li>
+      </ul>
+
+      <h3>Pasos manuales</h3>
+      <ol>
+        <li>Verificar si la carpeta ya es un repositorio Git.</li>
+        <li>Si no lo es, inicializar Git.</li>
+        <li>Revisar el estado de archivos.</li>
+        <li>Agregar archivos relevantes.</li>
+        <li>Crear el primer commit.</li>
+      </ol>
+
+      <h3>Comandos</h3>
+      <pre><code>git status
+git init
+git status
+git add holamundo.py ROADMAP_EXPERTO_PYTHON_DATOS_IA.md SESION_GUIADA.html METODO_DE_TRABAJO.html
+git commit -m "Agregar entorno inicial de aprendizaje Python"</code></pre>
+
+      <h3>Resultado esperado</h3>
+      <p>Despues del commit, <code>git status</code> deberia indicar que no hay cambios pendientes o mostrar solo archivos que todavia no se eligieron para guardar.</p>
+    </section>
+
+    <section>
+      <h2>Instalacion Para Escribir Codigo Rapido</h2>
+      <h3>Objetivo</h3>
+      <p>Dejar listo el entorno minimo para empezar a escribir Python en VS Code con autocompletado, linting basico, ejecucion de scripts y gestion de paquetes.</p>
+
+      <h3>Herramientas necesarias</h3>
+      <ul>
+        <li><strong>Python:</strong> lenguaje principal de la ruta.</li>
+        <li><strong>pip:</strong> gestor de paquetes incluido con Python.</li>
+        <li><strong>Git:</strong> control de versiones.</li>
+        <li><strong>VS Code:</strong> editor de codigo.</li>
+        <li><strong>Extension Python de VS Code:</strong> soporte de Python dentro del editor.</li>
+      </ul>
+
+      <h3>Instalacion manual de la extension Python</h3>
+      <ol>
+        <li>Abrir VS Code.</li>
+        <li>Ir a Extensions.</li>
+        <li>Buscar <code>Python</code>.</li>
+        <li>Instalar la extension oficial de Microsoft: <code>ms-python.python</code>.</li>
+      </ol>
+
+      <h3>Instalacion por terminal</h3>
+      <pre><code>code --install-extension ms-python.python</code></pre>
+
+      <h3>Verificacion</h3>
+      <pre><code>python --version
+pip --version
+git --version
+code --list-extensions</code></pre>
+    </section>
+  </main>
+  <script>
+    const statusBadge = document.getElementById("live-status");
+
+    if ("EventSource" in window && location.protocol.startsWith("http")) {
+      const events = new EventSource("/events");
+
+      events.addEventListener("open", () => {
+        statusBadge.textContent = "Autoactualizacion activa";
+      });
+
+      events.addEventListener("reload", () => {
+        window.location.reload();
+      });
+
+      events.addEventListener("error", () => {
+        statusBadge.textContent = "Servidor sin conexion";
+      });
+    }
+  </script>
+</body>
+</html>
