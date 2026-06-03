@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configuracion Inicial</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #d9dee7;
+      --code-bg: #111827;
+      --code-text: #f9fafb;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f141b;
+        --panel: #171d26;
+        --text: #e5e7eb;
+        --muted: #a7b0bf;
+        --border: #2c3645;
+        --code-bg: #05070a;
+        --code-text: #f3f4f6;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 32px auto 48px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    code {
+      font-family: Consolas, "Cascadia Code", monospace;
+    }
+
+    pre {
+      margin: 10px 0 0;
+      padding: 14px;
+      overflow-x: auto;
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Configuracion Inicial</h1>
+      <p class="muted">Referencia para preparar una PC o un proyecto nuevo. No hace falta memorizar esto; se consulta cuando se necesita.</p>
+    </header>
+
+    <section>
+      <h2>Idea General</h2>
+      <p>La configuracion inicial prepara las herramientas. Se hace pocas veces. El trabajo diario es otra cosa.</p>
+      <pre><code>Configuracion inicial = preparar PC y proyecto
+Trabajo diario = escribir codigo, probar, guardar y subir cambios</code></pre>
+    </section>
+
+    <section>
+      <h2>Herramientas Base</h2>
+      <ul>
+        <li><strong>Python:</strong> lenguaje que ejecuta los programas.</li>
+        <li><strong>pip:</strong> instala paquetes de Python.</li>
+        <li><strong>VS Code:</strong> editor donde se escribe codigo.</li>
+        <li><strong>Extension Python de VS Code:</strong> autocompletado, ejecucion y depuracion.</li>
+        <li><strong>Git:</strong> guarda versiones del proyecto en la PC.</li>
+        <li><strong>GitHub:</strong> guarda una copia online del proyecto.</li>
+        <li><strong>GitHub CLI:</strong> permite crear repositorios y autenticarse con GitHub desde terminal.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Instalar En Una PC Nueva</h2>
+      <h3>Python</h3>
+      <pre><code>winget install -e --id Python.Python.3.12 --accept-package-agreements --accept-source-agreements</code></pre>
+      <p>Verificar:</p>
+      <pre><code>python --version
+pip --version</code></pre>
+
+      <h3>Git</h3>
+      <pre><code>winget install -e --id Git.Git --accept-package-agreements --accept-source-agreements</code></pre>
+      <p>Verificar:</p>
+      <pre><code>git --version</code></pre>
+
+      <h3>VS Code</h3>
+      <pre><code>winget install -e --id Microsoft.VisualStudioCode --accept-package-agreements --accept-source-agreements</code></pre>
+      <p>Verificar:</p>
+      <pre><code>code --version</code></pre>
+
+      <h3>Extension Python de VS Code</h3>
+      <pre><code>code --install-extension ms-python.python</code></pre>
+
+      <h3>GitHub CLI</h3>
+      <pre><code>winget install -e --id GitHub.cli --accept-package-agreements --accept-source-agreements</code></pre>
+      <p>Verificar:</p>
+      <pre><code>gh --version</code></pre>
+    </section>
+
+    <section>
+      <h2>Configurar Git En Una PC Nueva</h2>
+      <p>Esto se hace una vez por PC. Define la identidad que aparecera en los commits.</p>
+      <pre><code>git config --global user.name "kiamchomi-hash"
+git config --global user.email "kiamchomi@gmail.com"</code></pre>
+      <p>Verificar:</p>
+      <pre><code>git config --global user.name
+git config --global user.email</code></pre>
+    </section>
+
+    <section>
+      <h2>Crear Un Proyecto Nuevo Desde Cero</h2>
+      <p>Esto se hace una vez por proyecto.</p>
+      <pre><code>mkdir MiProyecto
+cd MiProyecto
+git init</code></pre>
+      <p>Despues se crea el repositorio en GitHub y se conecta:</p>
+      <pre><code>git remote add origin https://github.com/USUARIO/NOMBRE_DEL_REPO.git
+git branch -M main
+git push -u origin main</code></pre>
+    </section>
+
+    <section>
+      <h2>Bajar Un Proyecto De GitHub A Otra PC</h2>
+      <p>Esto se hace la primera vez que se quiere tener el proyecto en otra computadora.</p>
+      <pre><code>git clone https://github.com/kiamchomi-hash/Python_Aprendizaje.git
+cd Python_Aprendizaje</code></pre>
+    </section>
+
+    <section>
+      <h2>Trabajo Diario</h2>
+      <p>Esto es lo que se usa todo el tiempo mientras se aprende y se escribe codigo.</p>
+      <pre><code>python archivo.py
+git status
+git add .
+git commit -m "Mensaje claro del cambio"
+git push</code></pre>
+      <p>Si se trabaja desde otra PC y hay cambios nuevos en GitHub:</p>
+      <pre><code>git pull</code></pre>
+    </section>
+
+    <section>
+      <h2>Que Ya Esta Hecho En Este Proyecto</h2>
+      <ul>
+        <li>Python instalado.</li>
+        <li>pip instalado.</li>
+        <li>VS Code instalado.</li>
+        <li>Extension Python de VS Code instalada.</li>
+        <li>Git instalado.</li>
+        <li>Git configurado con usuario <code>kiamchomi-hash</code> y email <code>kiamchomi@gmail.com</code>.</li>
+        <li>Repositorio Git local creado.</li>
+        <li>Repositorio publico en GitHub creado.</li>
+        <li>Rama principal normalizada como <code>main</code>.</li>
+        <li>Repositorio remoto conectado a <code>origin</code>.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
