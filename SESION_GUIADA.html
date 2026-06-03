@@ -398,6 +398,43 @@ pip --version
 git --version
 code --list-extensions</code></pre>
     </section>
+
+    <section>
+      <h2>Subir Proyecto A GitHub</h2>
+      <h3>Objetivo</h3>
+      <p>Publicar el repositorio local en GitHub para que quede disponible online en la cuenta <code>kiamchomi-hash</code>.</p>
+
+      <h3>Que es un remoto</h3>
+      <p>Un remoto es la direccion online del repositorio. Normalmente se llama <code>origin</code> y apunta a GitHub.</p>
+
+      <h3>Pasos manuales en GitHub</h3>
+      <ol>
+        <li>Entrar a <code>https://github.com/new</code>.</li>
+        <li>Crear un repositorio llamado <code>Python_Aprendizaje</code>.</li>
+        <li>Elegir visibilidad <code>Public</code>.</li>
+        <li>No agregar README, .gitignore ni licencia desde GitHub, porque el repositorio local ya tiene archivos.</li>
+        <li>Crear el repositorio.</li>
+      </ol>
+
+      <h3>Comandos locales</h3>
+      <pre><code>git branch -M main
+git remote add origin https://github.com/kiamchomi-hash/Python_Aprendizaje.git
+git push -u origin main</code></pre>
+
+      <h3>Verificacion</h3>
+      <p>Despues del push, abrir:</p>
+      <pre><code>https://github.com/kiamchomi-hash/Python_Aprendizaje</code></pre>
+
+      <h3>Si falta GitHub CLI</h3>
+      <p><code>gh</code> es la herramienta oficial de GitHub para crear repositorios, autenticarse y trabajar con GitHub desde la terminal.</p>
+      <p>Instalacion manual en Windows con winget:</p>
+      <pre><code>winget install -e --id GitHub.cli</code></pre>
+      <p>Verificacion:</p>
+      <pre><code>gh --version
+gh auth status</code></pre>
+      <p>Si no hay sesion iniciada, autenticarse con:</p>
+      <pre><code>gh auth login</code></pre>
+    </section>
   </main>
   <script>
     const statusBadge = document.getElementById("live-status");
