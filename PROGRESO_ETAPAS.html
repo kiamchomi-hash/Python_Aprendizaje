@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progreso de Etapas</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #d9dee7;
+      --done: #16794c;
+      --current: #2563eb;
+      --pending: #9aa3b2;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f141b;
+        --panel: #171d26;
+        --text: #e5e7eb;
+        --muted: #a7b0bf;
+        --border: #2c3645;
+        --done: #75d39a;
+        --current: #70a7ff;
+        --pending: #7d8796;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 32px auto 48px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: var(--muted);
+      text-underline-offset: 3px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .stage-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .stage {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .stage:first-child {
+      border-top: 0;
+    }
+
+    .mark {
+      width: 26px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .done .mark {
+      color: var(--done);
+      border-color: var(--done);
+    }
+
+    .current .mark {
+      color: var(--current);
+      border-color: var(--current);
+    }
+
+    .pending .mark {
+      color: var(--pending);
+    }
+
+    .title {
+      display: block;
+      font-weight: 700;
+    }
+
+    .note {
+      display: block;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Progreso de Etapas</h1>
+      <p class="muted">Punto de cierre de la sesion actual dentro de la hoja de ruta.</p>
+    </header>
+
+    <section>
+      <h2>Recurso Actual</h2>
+      <p><strong>Python Programming MOOC 2026 - Universidad de Helsinki</strong></p>
+      <p>Nos dejamos en esta pagina:</p>
+      <p><a href="https://programming-26.mooc.fi/part-1/1-getting-started">https://programming-26.mooc.fi/part-1/1-getting-started</a></p>
+    </section>
+
+    <section>
+      <h2>Part 1</h2>
+      <ul class="stage-list">
+        <li class="stage done">
+          <span class="mark">✓</span>
+          <span>
+            <span class="title">1. Getting started</span>
+            <span class="note">Visto y ejecutado localmente: print(), texto con comillas, operaciones dentro de print() y comentarios.</span>
+          </span>
+        </li>
+        <li class="stage pending">
+          <span class="mark">□</span>
+          <span>
+            <span class="title">2. Information from the user</span>
+            <span class="note">Pendiente: entrada de datos con input().</span>
+          </span>
+        </li>
+        <li class="stage pending">
+          <span class="mark">□</span>
+          <span>
+            <span class="title">3. More about variables</span>
+            <span class="note">Pendiente: variables con mas detalle.</span>
+          </span>
+        </li>
+        <li class="stage pending">
+          <span class="mark">□</span>
+          <span>
+            <span class="title">4. Arithmetic operations</span>
+            <span class="note">Pendiente: operaciones aritmeticas.</span>
+          </span>
+        </li>
+        <li class="stage pending">
+          <span class="mark">□</span>
+          <span>
+            <span class="title">5. Conditional statements</span>
+            <span class="note">Pendiente: condiciones con if.</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+[    1170ms] [WARNING] react-i18next:: It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour. @ https://programming-26.mooc.fi/commons-8ae25a89d7b5407016ee.js:1
+[    1251ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://programming-26.mooc.fi/favicon.ico:0
+[    1391ms] [LOG] Creating first worker @ https://programming-26.mooc.fi/875-2dbef4ab72425f072f10.js:0
+[    5300ms] [LOG] Python initialization complete @ https://download.mooc.fi/pyodide-cdn/v0.17.0/pyodide.asm.js:8
