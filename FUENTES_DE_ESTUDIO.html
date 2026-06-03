@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fuentes de Estudio</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #d9dee7;
+      --code-bg: #111827;
+      --code-text: #f9fafb;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f141b;
+        --panel: #171d26;
+        --text: #e5e7eb;
+        --muted: #a7b0bf;
+        --border: #2c3645;
+        --code-bg: #05070a;
+        --code-text: #f3f4f6;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1040px, calc(100% - 32px));
+      margin: 32px auto 48px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: var(--muted);
+      text-underline-offset: 3px;
+    }
+
+    code {
+      font-family: Consolas, "Cascadia Code", monospace;
+    }
+
+    pre {
+      margin: 10px 0 0;
+      padding: 14px;
+      overflow-x: auto;
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Fuentes de Estudio</h1>
+      <p class="muted">Indice de recursos reales. Las lecciones deben salir de estas fuentes, no de explicaciones genericas.</p>
+    </header>
+
+    <section>
+      <h2>Regla De Uso</h2>
+      <ol>
+        <li>Antes de una leccion, abrir la fuente real correspondiente.</li>
+        <li>Identificar la seccion exacta que se esta trabajando.</li>
+        <li>Convertir esa seccion en practica local.</li>
+        <li>Ejecutar codigo o ejercicios.</li>
+        <li>Registrar el logro solo si hubo evidencia practica.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Fase 1 - Fuentes Activas</h2>
+      <ul>
+        <li><a href="https://programming-26.mooc.fi/">Python Programming MOOC 2026 - Universidad de Helsinki</a></li>
+        <li><a href="https://programming-26.mooc.fi/part-1/">Python Programming MOOC - Part 1</a></li>
+        <li><a href="https://sqlbolt.com/">SQLBolt - Learn SQL</a></li>
+        <li><a href="https://dbeaver.com/docs/dbeaver/">DBeaver Documentation</a></li>
+        <li><a href="https://dbeaver.com/download/">DBeaver Download</a></li>
+        <li><a href="https://linuxcommand.org/tlcl.php">The Linux Command Line - William Shotts</a></li>
+        <li><a href="https://ohmyz.sh/">Oh My Zsh</a></li>
+        <li><a href="https://git-scm.com/doc">Git Official Documentation</a></li>
+        <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li>
+        <li><a href="https://obsidian.md/help/Home">Obsidian Help</a></li>
+        <li><a href="https://obsidian.md/download">Obsidian Download</a></li>
+        <li><a href="https://bitwarden.com/help/">Bitwarden Help Center</a></li>
+        <li><a href="https://bitwarden.com/download/">Bitwarden Download</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Fuente Actual</h2>
+      <p>Recurso: <strong>Python Programming MOOC 2026 - Universidad de Helsinki</strong></p>
+      <p>Seccion: <strong>Part 1</strong></p>
+      <p>Orden oficial de Part 1:</p>
+      <ol>
+        <li>Getting started</li>
+        <li>Information from the user</li>
+        <li>More about variables</li>
+        <li>Arithmetic operations</li>
+        <li>Conditional statements</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Siguiente Practica Desde La Fuente</h2>
+      <p>Continuar con <strong>Information from the user</strong>: entrada con <code>input()</code>.</p>
+      <pre><code>nombre = input("Escribe tu nombre: ")
+print("Hola " + nombre)</code></pre>
+    </section>
+  </main>
+</body>
+</html>
